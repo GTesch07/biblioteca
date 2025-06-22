@@ -26,7 +26,7 @@ public class Livros {
             case 'F' -> "Ficção";
             case 'N' -> "Não-ficção";
             case 'T' -> "Tecnologia";
-            case 'H' -> "História";
+            case 'A' -> "Aventura";
             default -> "Categoria inválida";
         };
     }

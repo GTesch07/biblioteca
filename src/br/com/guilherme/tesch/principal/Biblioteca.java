@@ -29,10 +29,10 @@ public class Biblioteca {
                 System.out.print("Preço: ");
                 double preco = scanner.nextDouble();
 
-                System.out.print("Categoria (F - Ficção, N - Não-ficção, T - Tecnoliga, H - História): ");
+                System.out.print("Categoria (F - Ficção, N - Não-ficção, T - Tecnoliga, A - Aventura): ");
                 char categoria = scanner.next().toUpperCase().charAt(0);
 
-                if ("FNTH".indexOf(categoria) != -1){
+                if ("FNTA".indexOf(categoria) != -1){
                     Livros livro = new Livros(titulo,autor,paginas,preco,categoria);
                     salvarLivro(livro);
                     System.out.println("Livro salvo com sucesso.");
@@ -41,7 +41,7 @@ public class Biblioteca {
                 }
             }
         }while(opcao == 'S');
-        System.out.print("\nDeseja ver livros de qual categoria? (F/N/T/H)\n");
+        System.out.print("\nDeseja ver livros de qual categoria? (F/N/T/A)\n");
         char categoriaConsulta = scanner.next().toUpperCase().charAt(0);
         listarLivrosPorCategoria(categoriaConsulta);
 
