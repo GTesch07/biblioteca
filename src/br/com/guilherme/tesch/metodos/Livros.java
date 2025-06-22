@@ -35,9 +35,9 @@ public class Livros {
     public String toString(){
         return String.format("""
                 Título: %s
-                Autor: %s
-                Páginas: %d
-                Preço: %f
+                  Autor: %s
+                  Páginas: %d
+                  Preço: %.2f
                 """, titulo,autor,paginas,preco);
     }
 

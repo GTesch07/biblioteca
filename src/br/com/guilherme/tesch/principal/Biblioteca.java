@@ -42,7 +42,7 @@ public class Biblioteca {
                 }
             }
         }while(opcao == 'S');
-        System.out.print("\nDeseja ver livros de qual categoria? (F/N/T/H)");
+        System.out.print("\nDeseja ver livros de qual categoria? (F/N/T/H)\n");
         char categoriaConsulta = scanner.next().toUpperCase().charAt(0);
         listarLivrosPorCategoria(categoriaConsulta);
 
