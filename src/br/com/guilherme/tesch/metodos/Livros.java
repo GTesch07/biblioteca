@@ -21,7 +21,7 @@ public class Livros {
         return categoria;
     }
 
-    public static String geDescricaoCategoria(char categoria){
+    public static String getDescricaoCategoria(char categoria){
         return switch (categoria){
             case 'F' -> "Ficção";
             case 'N' -> "Não-ficção";

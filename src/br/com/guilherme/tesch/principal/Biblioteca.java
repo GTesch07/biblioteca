@@ -3,7 +3,6 @@ package br.com.guilherme.tesch.principal;
 import br.com.guilherme.tesch.metodos.Livros;
 
 import java.io.*;
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Biblioteca {
@@ -64,7 +63,7 @@ public class Biblioteca {
             System.out.println("Nenhum livro cadastrado ainda.");
             return;
         }
-        System.out.println("\nLivros da categoria " + Livros.geDescricaoCategoria(categoria)+ ":");
+        System.out.println("\nLivros da categoria " + Livros.getDescricaoCategoria(categoria)+ ":");
         boolean encontrou = false;
 
         try (BufferedReader reader = new BufferedReader(new FileReader(ARQUIVO))){
