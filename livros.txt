@@ -1,0 +1,5 @@
+Senhor dos Anéis: A Sociedade do Anel;J.R.R. Tolkien;576;44.91;A
+Maze Runner: Correr ou morrer;James Dashner;428;56.41;F
+Outsider;Stephen King;528;63.05;F
+Duna: Livro 1;Frank Herbert;680;69.9;F
+Use a Cabeça Java - 3ª Edição: Guia do Aprendiz para Programação no Mundo Real;Bert Bates;736;102.13;T
