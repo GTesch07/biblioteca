@@ -39,6 +39,7 @@ public class Biblioteca {
                 } else {
                     System.out.println("Categoria inválida! Livro não cadastrado.");
                 }
+                scanner.nextLine();
             }
         } while (opcao == 'S');
         System.out.print("\nDeseja ver livros de qual categoria? (F/N/T/A)\n");

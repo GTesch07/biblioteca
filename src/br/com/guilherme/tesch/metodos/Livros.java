@@ -68,7 +68,12 @@ public class Livros {
     }
 
     public static void salvarLivro(Livros livro) {
-        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(ARQUIVO, true), StandardCharsets.UTF_8))) {
+        try (BufferedWriter writer = new BufferedWriter(
+            new OutputStreamWriter(
+                new FileOutputStream(ARQUIVO, true), 
+                StandardCharsets.UTF_8
+                )
+        )) {
             writer.write(livro.toFileFormat());
             writer.newLine();
         } catch (IOException e) {
@@ -85,7 +90,12 @@ public class Livros {
         System.out.println("\nLivros da categoria " + Livros.getDescricaoCategoria(categoria) + ":");
         boolean encontrou = false;
 
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(ARQUIVO),StandardCharsets.UTF_8))) {
+        try (BufferedReader reader = new BufferedReader(
+            new InputStreamReader(
+                new FileInputStream(ARQUIVO),
+                StandardCharsets.UTF_8
+                )
+        )) {
             String linha;
             while ((linha = reader.readLine()) != null) {
                 Livros livro = Livros.fromFileFormat(linha);
