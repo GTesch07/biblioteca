@@ -13,10 +13,16 @@ public class Biblioteca {
         char continuarConsulta;
         
         do {
-            System.out.println("Cadastrar novo livro? (S/N)");
-            opcao = scanner.next().toUpperCase().charAt(0);
-            scanner.nextLine();
-
+            do{
+                  System.out.println("Cadastrar novo livro? (S/N)");
+                opcao = scanner.next().toUpperCase().charAt(0);
+                scanner.nextLine();
+                
+                if(opcao != 'S' && opcao != 'N'){
+                    System.out.println("\nOpção inválida, tente novamente!");
+                }    
+            }while(opcao != 'S' && opcao != 'N');
+          
             if (opcao == 'S') {
                 System.out.print("Título: ");
                 String titulo = scanner.nextLine();
@@ -38,22 +44,32 @@ public class Biblioteca {
                     Livros.salvarLivro(livro);
                     System.out.println("Livro salvo com sucesso.");
                 } else {
-                    System.out.println("Categoria inválida! Livro não cadastrado.");
+                    System.out.println("\nCategoria inválida! Livro não cadastrado.");
                 }
                 scanner.nextLine();
+            }else if (opcao == 'N') {
+                do{
+                    System.out.print("\nDeseja ver livros de qual categoria? (F/N/T/A)\n");
+                    char categoriaConsulta = scanner.next().toUpperCase().charAt(0);
+                    Livros.listarLivrosPorCategoria(categoriaConsulta);
+                    do{
+                        System.out.println("Deseja consultar outra categoria? (S/N)");
+                        continuarConsulta = scanner.next().toUpperCase().charAt(0);
+                        scanner.nextLine();
+
+                        if(continuarConsulta != 'S' && continuarConsulta != 'N'){
+                                System.out.println("\nOpção inválida, tente novamente!");
+                        }
+                    } while(continuarConsulta != 'S' && continuarConsulta != 'N');
+                    
+                  } while (continuarConsulta == 'S');
+                   System.out.println("\nPrograma finalizado.");
+                   break;
             }
-        } while (opcao == 'S');
-        do{
-            System.out.print("\nDeseja ver livros de qual categoria? (F/N/T/A)\n");
-            char categoriaConsulta = scanner.next().toUpperCase().charAt(0);
-            Livros.listarLivrosPorCategoria(categoriaConsulta);
+        } while (true);
+        
 
-            System.out.println("Deseja consultar outra categoria? (S/N)");
-            continuarConsulta = scanner.next().toUpperCase().charAt(0);
-            scanner.nextLine();
-        } while (continuarConsulta == 'S');
-
-        System.out.println("Programa finalizado.");
+       
 
         scanner.close();
     }

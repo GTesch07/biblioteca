@@ -84,7 +84,7 @@ public class Livros {
     public static void listarLivrosPorCategoria(char categoria) {
         File arquivo = new File(ARQUIVO);
         if (!arquivo.exists()) {
-            System.out.println("Nenhum livro cadastrado ainda.");
+            System.out.println("\nNenhum livro cadastrado ainda.\n");
             return;
         }
         System.out.println("\nLivros da categoria " + Livros.getDescricaoCategoria(categoria) + ":");
@@ -105,7 +105,7 @@ public class Livros {
                 }
             }
             if (!encontrou) {
-                System.out.println("Nenhum livro encontrado nessa categoria.");
+                System.out.println("Nenhum livro encontrado nessa categoria.\n");
             }
         } catch (IOException e) {
             System.out.println("Erro ao ler livros: " + e.getMessage());
