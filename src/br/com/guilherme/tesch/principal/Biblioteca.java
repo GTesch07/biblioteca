@@ -10,7 +10,8 @@ public class Biblioteca {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         char opcao;
-
+        char continuarConsulta;
+        
         do {
             System.out.println("Cadastrar novo livro? (S/N)");
             opcao = scanner.next().toUpperCase().charAt(0);
@@ -42,9 +43,17 @@ public class Biblioteca {
                 scanner.nextLine();
             }
         } while (opcao == 'S');
-        System.out.print("\nDeseja ver livros de qual categoria? (F/N/T/A)\n");
-        char categoriaConsulta = scanner.next().toUpperCase().charAt(0);
-        Livros.listarLivrosPorCategoria(categoriaConsulta);
+        do{
+            System.out.print("\nDeseja ver livros de qual categoria? (F/N/T/A)\n");
+            char categoriaConsulta = scanner.next().toUpperCase().charAt(0);
+            Livros.listarLivrosPorCategoria(categoriaConsulta);
+
+            System.out.println("Deseja consultar outra categoria? (S/N)");
+            continuarConsulta = scanner.next().toUpperCase().charAt(0);
+            scanner.nextLine();
+        } while (continuarConsulta == 'S');
+
+        System.out.println("Programa finalizado.");
 
         scanner.close();
     }
