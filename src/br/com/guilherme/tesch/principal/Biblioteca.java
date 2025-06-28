@@ -11,10 +11,13 @@ public class Biblioteca {
         Scanner scanner = new Scanner(System.in);
         char opcao;
         char continuarConsulta;
-        
+        System.out.println("===========================================");
+        System.out.println("Bem vindo ao Sistema de Cadastro de Livros!");
+        System.out.println("===========================================\n");
+
         do {
             do{
-                  System.out.println("Cadastrar novo livro? (S/N)");
+                  System.out.println("Deseja cadastrar um novo livro? (S/N)");
                 opcao = scanner.next().toUpperCase().charAt(0);
                 scanner.nextLine();
                 
